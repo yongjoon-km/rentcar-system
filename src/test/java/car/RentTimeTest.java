@@ -1,5 +1,6 @@
 package car;
 
+import object_oriented.car.RentTime;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
