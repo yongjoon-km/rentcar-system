@@ -5,7 +5,6 @@ import object_oriented.car.CarType;
 import object_oriented.car.RentInfo;
 import object_oriented.car.RentableCar;
 import object_oriented.car.rent_policy.AvailableTimeRentableStrategy;
-import object_oriented.car.rent_policy.MinimumTimeRentableStrategy;
 import object_oriented.user.L1License;
 import object_oriented.user.User;
 
