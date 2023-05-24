@@ -22,8 +22,7 @@ public class App {
                 car,
                 BigDecimal.TEN,
                 List.of(),
-                List.of(new AvailableTimeRentableStrategy(),
-                        new MinimumTimeRentableStrategy()));
+                new AvailableTimeRentableStrategy());
         try {
             RentInfo rentInfo = rentableCar.rentCar(
                     user,

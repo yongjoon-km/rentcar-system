@@ -8,6 +8,6 @@ public class MinimumTimeRentableStrategy implements RentableTimeStrategy {
 
     @Override
     public boolean isAvailable(RentableCar rentableCar, RentTime rentTime) {
-        return rentTime.getHours() > MINIMUM_HOURS;
+        return !rentableCar.isReservedIn(rentTime) && rentTime.getHours() > MINIMUM_HOURS;
     }
 }

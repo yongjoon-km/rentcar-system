@@ -13,13 +13,13 @@ public class RentableCar {
     private Car car;
     private BigDecimal fee;
     private List<RentTime> reservedTime;
-    private List<RentableTimeStrategy> rentableTimeStrategies;
+    private RentableTimeStrategy rentableTimeStrategy;
 
-    public RentableCar(Car car, BigDecimal fee, List<RentTime> reservedTime, List<RentableTimeStrategy> rentableTimeStrategies) {
+    public RentableCar(Car car, BigDecimal fee, List<RentTime> reservedTime, RentableTimeStrategy rentableTimeStrategy) {
         this.car = car;
         this.fee = fee;
         this.reservedTime = reservedTime;
-        this.rentableTimeStrategies = rentableTimeStrategies;
+        this.rentableTimeStrategy = rentableTimeStrategy;
     }
 
     public RentInfo rentCar(User user, LocalDateTime from, LocalDateTime to) {
@@ -34,8 +34,7 @@ public class RentableCar {
     }
 
     private boolean isAvailableByPolicy(RentTime rentTime) {
-        return rentableTimeStrategies.stream()
-                .allMatch(s -> s.isAvailable(this, rentTime));
+        return rentableTimeStrategy.isAvailable(this, rentTime);
     }
 
     public boolean isReservedIn(RentTime rentTime) {
